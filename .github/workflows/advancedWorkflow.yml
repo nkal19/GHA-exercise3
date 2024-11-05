@@ -1,6 +1,6 @@
 name: first workflow
 env:
-  WORKFLOW_VAR: "This variable is declared at workflow level"
+ WORKFLOW_VAR: "This variable is declared at workflow level"
 on:
   workflow_dispatch:
 
@@ -21,7 +21,7 @@ jobs:
            who-to-greet: ${{ github.actor }}
        - name: time
          run: |
-           echo "The time of teh greeting was at: ${{ steps.print-to-log.outputs.time }}"
+           echo "The time of the greeting was at: ${{ steps.print-to-log.outputs.time }}"
    secondjob:
      env:
        JOB_VAR: "This is a job variable"
@@ -38,7 +38,7 @@ jobs:
            STEP_VAR: "This is a step level variable"
          run: |
           echo "$WORKFLOW_VAR"
-          echo "`$JOB_VAR"
+          echo "$JOB_VAR"
           echo "$STEP_VAR"
           echo "The following is a secret ${{ secrets.SOME_SECRET }}
           echo "The following are default environment variables"
